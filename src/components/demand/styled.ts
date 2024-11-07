@@ -5,6 +5,7 @@ export const DemandWrapper = styled.div`
   height: 160px;
   display: flex;
   flex-direction: column;
+  margin-top: 6em;
 `;
 
 export const DemandText = styled.p`

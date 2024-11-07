@@ -43,6 +43,8 @@ export const UserSchoolPage: React.FC = () => {
       <button
         onClick={handleClick}
         style={{
+          position: "fixed",
+          bottom: 0,
           marginBottom: isIOS ? 80 : 0,
           border: "none",
           backgroundColor: "white",
