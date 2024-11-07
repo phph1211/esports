@@ -48,7 +48,7 @@ export const UserSchoolPage: React.FC = () => {
           width: "90%",
         }}
       >
-        <LinkButton isAble={inputValue} text="다음으로" endPoint={"userCode"} />
+        <LinkButton isAble={!isEmpty} text="다음으로" endPoint={"userCode"} />
       </button>
     </S.PageLayout>
   );
