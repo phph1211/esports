@@ -10,24 +10,24 @@ export interface HeaderProps {
   description?: string;
 }
 
-useEffect(() => {
-  const handleBlur = () => {
-    window.scrollTo(0, 0);
-  };
-
-  window.addEventListener("blur", handleBlur);
-
-  return () => {
-    window.removeEventListener("blur", handleBlur);
-  };
-}, []);
-
 export const Header: React.FC<HeaderProps> = ({
   title,
   hasGoBackIcon = false,
   description,
   endPoint = "",
 }) => {
+  useEffect(() => {
+    const handleBlur = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("blur", handleBlur);
+
+    return () => {
+      window.removeEventListener("blur", handleBlur);
+    };
+  }, []);
+
   return (
     <S.HeaderWrapper style={{ fontFamily: "sans-serif" }}>
       {hasGoBackIcon ? (
