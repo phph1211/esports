@@ -17,14 +17,20 @@ export const Header: React.FC<HeaderProps> = ({
   endPoint = "",
 }) => {
   useEffect(() => {
-    const handleBlur = () => {
+    const handleResize = () => {
       window.scrollTo(0, 0);
     };
 
-    window.addEventListener("blur", handleBlur);
+    const handleFocusOut = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("focusout", handleFocusOut);
 
     return () => {
-      window.removeEventListener("blur", handleBlur);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("focusout", handleFocusOut);
     };
   }, []);
 
