@@ -12,6 +12,7 @@ export const HeaderWrapper = styled.header`
   padding: 25px 0 0 0;
   text-align: center;
   position: sticky;
+  top: 0;
 `;
 
 export const HeaderText = styled.p<HeaderTextStyleProps>`
