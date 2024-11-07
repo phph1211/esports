@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./styled";
-import useDeviceType from "../../hook/useDeviceType";
 
 export interface DemandProps {
   text1: string;
@@ -10,7 +9,6 @@ export interface DemandProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isSchool?: boolean;
   errorCode?: any;
-  isStudentCodePage?: boolean;
 }
 
 export const Demand: React.FC<DemandProps> = ({
@@ -21,14 +19,11 @@ export const Demand: React.FC<DemandProps> = ({
   onChange,
   isSchool,
   errorCode,
-  isStudentCodePage,
 }) => {
   const [inputValue, setInputValue] = useState(value || "");
   const [warning, setWarning] = useState("");
   const [warning2, setWarning2] = useState("");
   const [isAutoCompleted, setIsAutoCompleted] = useState(false);
-
-  const { isIOS } = useDeviceType();
 
   const sanitizeInput = (value: string) => {
     return value.replace(/[;'"\-/*#]/g, "");
@@ -36,11 +31,7 @@ export const Demand: React.FC<DemandProps> = ({
 
   useEffect(() => {
     if (errorCode) {
-      setWarning(
-        isStudentCodePage === true
-          ? "학번과 이름은 반드시 공백으로 구분해주세요"
-          : errorCode
-      );
+      setWarning(errorCode);
       setWarning2("ex) 한세사이버보안고등학교 | 세명컴퓨터고등학교");
     }
   }, [errorCode]);
@@ -97,15 +88,6 @@ export const Demand: React.FC<DemandProps> = ({
           <S.WarningText>{warning}</S.WarningText>
           <S.WarningText style={{ margin: 0 }}>{warning2}</S.WarningText>
         </>
-      )}
-
-      {isStudentCodePage ? (
-        <S.WarningText>
-          학번과 이름은 <strong style={{ fontWeight: 900 }}>반드시</strong>{" "}
-          공백으로 구분해주세요
-        </S.WarningText>
-      ) : (
-        ""
       )}
     </S.DemandWrapper>
   );
