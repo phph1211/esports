@@ -74,7 +74,7 @@ export const UserNamePage: React.FC = () => {
         type="button"
         onClick={handleSubmit}
         style={{
-          marginBottom: isIOS ? 50 : 0,
+          marginBottom: isIOS ? 80 : 0,
           border: "none",
           display: "flex",
           alignItems: "center",
