@@ -17,10 +17,10 @@ export const Header: React.FC<HeaderProps> = ({
   endPoint = "",
 }) => {
   return (
-    <S.HeaderWrapper>
+    <S.HeaderWrapper style={{ fontFamily: "sans-serif" }}>
       {hasGoBackIcon ? (
         <Link to={endPoint || "/"}>
-          <MdArrowBackIos style={{ fontSize: 25 }} />
+          <MdArrowBackIos color="gray" style={{ fontSize: 25 }} />
         </Link>
       ) : null}
       <S.HeaderText hasGoBackIcon={hasGoBackIcon}>
