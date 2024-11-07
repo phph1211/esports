@@ -5,7 +5,7 @@ export const PageLayout = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
 `;
 
 export const WarningText = styled.p`
