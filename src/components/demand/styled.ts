@@ -5,17 +5,18 @@ export const DemandWrapper = styled.div`
   height: 160px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
 export const DemandText = styled.p`
-  font-size: 35px;
+  font-size: 2em;
   font-weight: bold;
   margin: 0;
 `;
 
 export const DemandInput = styled.input`
+  margin-top: 50px;
   width: 100%;
+  hright: 80px;
   border-width: 0 0 1px;
   font-size: 18px;
   &:focus {
@@ -24,3 +25,9 @@ export const DemandInput = styled.input`
 `;
 
 export const TextBox = styled.div``;
+
+export const WarningText = styled.p`
+  color: red;
+  margin: 0;
+  margin-top: 10px;
+`;

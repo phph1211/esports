@@ -1,28 +1,35 @@
 import React from "react";
 import * as S from "./styled";
 import { MdArrowBackIos } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export interface HeaderProps {
   title: string;
   hasGoBackIcon?: boolean;
+  endPoint?: string;
   description?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   title,
-  hasGoBackIcon,
+  hasGoBackIcon = false,
   description,
+  endPoint = "",
 }) => {
   return (
     <S.HeaderWrapper>
-      {hasGoBackIcon === true ? (
-        <MdArrowBackIos style={{ fontSize: 25 }} />
+      {hasGoBackIcon ? (
+        <Link to={endPoint || "/"}>
+          <MdArrowBackIos style={{ fontSize: 25 }} />
+        </Link>
       ) : null}
-      <S.HeaderText>
+      <S.HeaderText hasGoBackIcon={hasGoBackIcon}>
         {title}
-        {description ? <S.HeaderText>{description}</S.HeaderText> : ""}
+        {description ? (
+          <S.DescriptionText>{description}</S.DescriptionText>
+        ) : null}
       </S.HeaderText>
-      {hasGoBackIcon === true ? <div></div> : null}
+      {hasGoBackIcon ? <div></div> : null}
     </S.HeaderWrapper>
   );
 };
