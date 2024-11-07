@@ -79,7 +79,7 @@ export const Demand: React.FC<DemandProps> = ({
   };
 
   return (
-    <S.DemandWrapper style={{ marginTop: isIOS ? "30" : 0 }}>
+    <S.DemandWrapper style={{ marginTop: isIOS ? 30 : 0 }}>
       <S.TextBox>
         <S.DemandText style={{ marginTop: 10 }}>{text1}</S.DemandText>
         <S.DemandText>{text2}</S.DemandText>
