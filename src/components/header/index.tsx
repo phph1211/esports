@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styled";
 import { MdArrowBackIos } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -9,6 +9,18 @@ export interface HeaderProps {
   endPoint?: string;
   description?: string;
 }
+
+useEffect(() => {
+  const handleBlur = () => {
+    window.scrollTo(0, 0);
+  };
+
+  window.addEventListener("blur", handleBlur);
+
+  return () => {
+    window.removeEventListener("blur", handleBlur);
+  };
+}, []);
 
 export const Header: React.FC<HeaderProps> = ({
   title,
