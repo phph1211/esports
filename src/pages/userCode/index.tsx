@@ -49,7 +49,6 @@ export const UserCodePage: React.FC = () => {
         type="button"
         onClick={handleSubmit}
         style={{
-          marginBottom: isIOS ? 100 : 0,
           position: "fixed",
           bottom: 0,
           border: "none",
