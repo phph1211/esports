@@ -10,7 +10,7 @@ export const PageLayout = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  flex: 1.5;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
