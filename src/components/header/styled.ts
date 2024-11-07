@@ -11,6 +11,7 @@ export const HeaderWrapper = styled.header`
   justify-content: space-around;
   padding: 25px 0 0 0;
   text-align: center;
+  position: sticky;
 `;
 
 export const HeaderText = styled.p<HeaderTextStyleProps>`
