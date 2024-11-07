@@ -16,8 +16,9 @@ export const DemandText = styled.p`
 export const DemandInput = styled.input`
   margin-top: 50px;
   width: 100%;
-  hright: 80px;
-  border-width: 0 0 1px;
+  height: 80px;
+  border: none;
+  border-bottom: 1px solid gainsboro;
   font-size: 18px;
   &:focus {
     outline: none;
