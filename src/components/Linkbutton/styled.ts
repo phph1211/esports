@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const LinkButton = styled(Link)`
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 60px;
   border-radius: 18px;
