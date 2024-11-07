@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Header } from "../../components/header";
 import { Demand } from "../../components/demand";
+import useDeviceType from "../../hook/useDeviceType";
 import * as S from "../styled";
 
 export const UserCodePage: React.FC = () => {
@@ -10,6 +11,7 @@ export const UserCodePage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { userSchool } = location.state || {};
+  const { isIOS } = useDeviceType();
 
   useEffect(() => {
     setIsEmpty(!inputValue);
@@ -47,6 +49,7 @@ export const UserCodePage: React.FC = () => {
         type="button"
         onClick={handleSubmit}
         style={{
+          marginBottom: isIOS ? 50 : 0,
           border: "none",
           display: "flex",
           alignItems: "center",

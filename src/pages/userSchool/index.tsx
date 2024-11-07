@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/header";
 import { LinkButton } from "../../components/Linkbutton";
 import { Demand } from "../../components/demand";
+import useDeviceType from "../../hook/useDeviceType";
 import * as S from "../styled";
 
 export const UserSchoolPage: React.FC = () => {
@@ -10,6 +11,7 @@ export const UserSchoolPage: React.FC = () => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [errorCode, setErrorCode] = useState("");
   const navigate = useNavigate();
+  const { isIOS } = useDeviceType();
 
   useEffect(() => {
     setIsEmpty(!inputValue);
@@ -41,7 +43,9 @@ export const UserSchoolPage: React.FC = () => {
       <button
         onClick={handleClick}
         style={{
+          marginBottom: isIOS ? 50 : 0,
           border: "none",
+          backgroundColor: "white",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
