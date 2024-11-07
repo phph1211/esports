@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./styled";
+import useDeviceType from "../../hook/useDeviceType";
 
 export interface DemandProps {
   text1: string;
@@ -26,6 +27,8 @@ export const Demand: React.FC<DemandProps> = ({
   const [warning, setWarning] = useState("");
   const [warning2, setWarning2] = useState("");
   const [isAutoCompleted, setIsAutoCompleted] = useState(false);
+
+  const { isIOS } = useDeviceType();
 
   const sanitizeInput = (value: string) => {
     return value.replace(/[;'"\-/*#]/g, "");
@@ -76,7 +79,7 @@ export const Demand: React.FC<DemandProps> = ({
   };
 
   return (
-    <S.DemandWrapper>
+    <S.DemandWrapper style={{ marginTop: isIOS ? "30" : 0 }}>
       <S.TextBox>
         <S.DemandText style={{ marginTop: 10 }}>{text1}</S.DemandText>
         <S.DemandText>{text2}</S.DemandText>

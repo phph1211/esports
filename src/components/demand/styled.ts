@@ -16,7 +16,6 @@ export const DemandText = styled.p`
 export const DemandInput = styled.input`
   margin-top: 50px;
   width: 100%;
-  height: 80px;
   border-width: 0 0 1px;
   font-size: 18px;
   &:focus {
