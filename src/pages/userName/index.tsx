@@ -24,11 +24,18 @@ export const UserNamePage: React.FC = () => {
       return;
     }
 
+    const schoolName =
+      userSchool === "한세사이버보안고등학교"
+        ? "HANSEI"
+        : userSchool === "세명컴퓨터고등학교"
+        ? "SEMYEONG"
+        : userSchool;
+
     try {
       const response = await axios.post(
         "https://esports.hanum.us/luckydraw/getDraw",
         {
-          school: userSchool,
+          school: schoolName,
           studentNumber: userStudentNumber,
           name: inputValue,
         }
@@ -38,7 +45,7 @@ export const UserNamePage: React.FC = () => {
         navigate("/finish", {
           state: {
             studentInfo: {
-              school: userSchool,
+              school: schoolName,
               studentNumber: userStudentNumber,
               name: inputValue,
             },
@@ -46,9 +53,7 @@ export const UserNamePage: React.FC = () => {
         });
       }
     } catch (error) {
-      console.error("POST 요청 실패:", error);
       alert("서버에 데이터를 전송할 수 없습니다. 다시 시도해주세요.");
-      console.log(userSchool, userStudentNumber, inputValue);
     }
   };
 
