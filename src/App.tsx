@@ -3,7 +3,6 @@ import { UserNamePage } from "./pages/userName";
 import { UserCodePage } from "./pages/userCode";
 import { FinishPage } from "./pages/finish";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import axios from "axios";
 
 function App() {
   return (

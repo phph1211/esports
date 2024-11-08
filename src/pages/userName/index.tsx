@@ -12,7 +12,6 @@ export const UserNamePage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { userSchool, userStudentNumber } = location.state || {};
-  const { isIOS } = useDeviceType();
 
   useEffect(() => {
     setIsEmpty(!inputValue);
